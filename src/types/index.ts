@@ -41,3 +41,14 @@ export interface UserData {
     birthdate: Date,
     password: string,
 }
+
+export interface ErrorHandler {
+    errorMessage: string,
+    errorMessages: string[],
+}
+
+export interface ToastInfo {
+    status: number,
+    message: string,
+    timestamp: Date,
+}

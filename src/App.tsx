@@ -1,15 +1,17 @@
-import { Header } from 'components/Header';
 import { BrowserRouter } from 'react-router-dom';
-import { Routes } from 'routes';
-import { Theme } from 'themes/theme';
+import { Header } from './components/Header';
+import { Toast } from './components/Toast';
+import { ToastProvider } from './context/useToast';
+import { Routes } from './routes';
 
-export const App = () => {
+export const App = (): JSX.Element => {
   return (
-    <Theme>
-      <BrowserRouter>
-        <Header /> 
+    <BrowserRouter>
+      <ToastProvider>
+        <Header />
+        <Toast />
         <Routes />
-      </BrowserRouter>
-    </Theme>
+      </ToastProvider>
+    </BrowserRouter>
   );
 };
